@@ -1,0 +1,13 @@
+<h1><%= title %></h1>
+
+<% if (weapon_list.length) { %>
+<ul>
+  <% weapon_list.forEach(function(weapon) { %>
+  <li>
+    <a href="<%= weapon.url %>"><%= weapon.name %></a>
+  </li>
+  <% }); %>
+</ul>
+<% } else { %>
+<p>There are no weapons.</p>
+<% } %>

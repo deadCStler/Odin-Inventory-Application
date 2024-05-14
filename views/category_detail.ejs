@@ -1,0 +1,21 @@
+<h1>Category: <%= category.name%></h1>
+
+<div style="margin-left: 20px; margin-top: 20px">
+  <p><strong>Description:</strong> <%= category.description%></p>
+  <h4>Weapons</h4>
+  <% weapons.forEach(function(val) { %>
+  <hr />
+  <p>
+    <a href="<%= val.url %>"><%=val.name%></a>
+  </p>
+  <% }); %> <% if (!weapons.length) { %>
+  <p>There are no weapons in the menu.</p>
+  <% } %>
+  <hr />
+  <p>
+    <a href="<%= category.url %>/delete">Delete Category</a>
+  </p>
+  <p>
+    <a href="<%= category.url %>/update">Update Category</a>
+  </p>
+</div>

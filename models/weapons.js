@@ -10,7 +10,7 @@ const WeaponsSchema = new Schema({
 });
 
 WeaponsSchema.virtual("url").get(function () {
-  return `/category/weapons/${this._id}`;
+  return `/menu/weapon/${this._id}`;
 });
 
 module.exports = mongoose.model("Weapons", WeaponsSchema);

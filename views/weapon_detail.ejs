@@ -1,0 +1,21 @@
+<h1>Weapon: <%= weapon.name %></h1>
+
+<div style="margin-left: 20px; margin-top: 20px">
+  <p>
+    <strong>Name: </strong>
+    <%= weapon.name %>
+  </p>
+  <p><strong>Description:</strong> <%= weapon.description%></p>
+  <p><strong>Price:</strong> <%= weapon.price%></p>
+  <p>
+    <strong>Category: </strong>
+    <a href="<%= weapon.category.url %>"><%= weapon.category.name %></a>
+  </p>
+  <hr />
+  <p>
+    <a href="<%= weapon.url %>/delete">Delete weapon</a>
+  </p>
+  <p>
+    <a href="<%= weapon.url %>/update">Update weapon</a>
+  </p>
+</div>
