@@ -1,0 +1,15 @@
+<h1><%= title %>: <%= weapon.name %></h1>
+
+<p>Do you really want to delete this weapon?</p>
+<form method="POST">
+  <div class="form-group">
+    <input
+      id="weaponid"
+      class="form-control"
+      type="hidden"
+      name="weaponid"
+      value="<%= weapon._id %>"
+    />
+  </div>
+  <button class="btn btn-primary" type="submit">Delete</button>
+</form>

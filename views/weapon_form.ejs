@@ -1,0 +1,63 @@
+<h1><%= title %></h1>
+
+<form method="POST">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input
+      id="name"
+      class="form-control"
+      type="text"
+      placeholder="Name of weapon"
+      name="name"
+      required
+      value="<%= typeof weapon !== 'undefined' ? weapon.name : '' %>"
+    />
+  </div>
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea
+      id="description"
+      class="form-control"
+      placeholder="Description"
+      name="description"
+      required
+    >
+<%= typeof weapon !== 'undefined' ? weapon.description : '' %></textarea
+    >
+  </div>
+  <div class="form-group">
+    <label for="price">Price:</label>
+    <input
+      id="price"
+      class="form-control"
+      type="number"
+      placeholder="Price"
+      name="price"
+      value="<%= typeof weapon !== 'undefined' ? weapon.price : '' %>"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label>Category:</label>
+    <select id="category" class="form-control" name="category" required>
+      <option value="">--Please select a category--</option>
+      <% categories.forEach(function(category) { %>
+        <option 
+          value="<%= category._id %>" 
+          <%= typeof weapon !== 'undefined' && weapon.category.equals(category._id) ? 'selected' : '' %>
+        >
+          <%= category.name %>
+        </option>
+      <% }); %>
+    </select>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+
+<% if (locals.errors) { %>
+<ul>
+  <% errors.forEach(function(error) { %>
+  <li><%= error.msg %></li>
+  <% }); %>
+</ul>
+<% } %>
